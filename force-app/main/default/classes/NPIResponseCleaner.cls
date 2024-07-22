@@ -14,6 +14,6 @@ public class NPIResponseCleaner {
 
 	
 	public static NPIResponseCleaner parse(String json) {
-		return (NPIResponseCleaner) System.JSON.deserialize(json.replace('number', 'numberX'), NPIResponseCleaner.class);
+		return (NPIResponseCleaner) System.JSON.deserialize(json.replace('"number"', '"numberX"'), NPIResponseCleaner.class);
 	}
 }

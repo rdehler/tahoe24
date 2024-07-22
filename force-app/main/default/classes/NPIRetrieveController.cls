@@ -7,6 +7,7 @@ public with sharing class NPIRetrieveController {
             NPIResponseCleaner res = NPIService.getNPIResults(c.FirstName, c.LastName, c.MailingPostalCode);
 
             c.NPI__c = res?.results?.get(0)?.numberX;
+            c.Phone = res?.results?.get(0)?.addresses?.get(0)?.telephone_number;
             update c;
             
         } catch (Exception e) {
